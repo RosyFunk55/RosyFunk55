@@ -1,0 +1,28 @@
+name: TOOLBOXLAP
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Start Building...
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Downloading & Installing Essentials
+        run: |
+          wget -O Downloads.sh "https://gitlab.com/raposabrty/pcrdp/-/raw/main/Downloads.sh"
+          chmod +x Downloads.sh
+          ./Downloads.sh
+
+      - name: Show Website
+        run: |
+          wget -O show.sh "https://gitlab.com/raposabrty/pcrdp/-/raw/main/show.sh"
+          chmod +x show.sh
+          ./show.sh
+
+      - name: Time Counter
+        run: |
+          wget -O loop.sh "https://gitlab.com/raposabrty/pcrdp/-/raw/main/loop.sh"
+          chmod +x loop.sh
+          ./loop.sh
